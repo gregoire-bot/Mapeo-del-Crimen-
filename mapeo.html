@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeo del crimen ciudad Arequipa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://wallpapercave.com/wp/wp4201537.jpg'); /* URL de la imagen de fondo */
+            background-size: cover; /* Escalar la imagen para cubrir todo el fondo */
+            background-position: center; /* Centrar la imagen */
+            background-repeat: no-repeat; /* No repetir la imagen */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.753); /* Fondo blanco semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .button {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #007bff0a;
+            color: #191717;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            display: none;
+            margin-top: 20px;
+        }
+        .content.active {
+            display: block;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .contacts {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .contacts h2 {
+            color: #333;
+        }
+        .contacts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .contacts ul li {
+            background-color: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Plataforma de Mapeo del Crimen</h1>
+        <div class="button" onclick="showContent('callPolice')">Llamar a Policías</div>
+        <div class="button" onclick="showContent('monitorVehicles')">Monitorear Vehículos</div>
+        <div class="button" onclick="showContent('hotspots')">Mostrar Puntos Calientes</div>
+
+        <div id="callPolice" class="content">
+            <h2>Contactos de Emergencia</h2>
+            <div class="contacts">
+                <ul>
+                    <li>Policía: 123-456-789</li>
+                    <li>Serenazgo: 987-654-321</li>
+                    <li>Bomberos: 112-233-344</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="monitorVehicles" class="content">
+            <h2>Monitoreo de Vehículos</h2>
+            <img src="https://www.google.com/maps/d/thumbnail?mid=14cTjafvV9Bt7Us-6Ny64KzJpmz8" alt="Mapa de Monitoreo de Vehículos">
+        </div>
+
+        <div id="hotspots" class="content">
+            <h2>Puntos Calientes del Crimen</h2>
+            <img src="https://tiendasphilco.com/pub/media/paginas/mapa-delivery.jpg" alt="Mapa de Puntos Calientes">
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Ocultar todos los contenidos
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+
+            // Mostrar el contenido seleccionado
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.classList.add('active');
+        }
+    </script>
+</body>
+</html>
